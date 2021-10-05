@@ -6,28 +6,40 @@
              xmlns:local="clr-namespace:TileMaker"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Popup Name="PopWin">
-            <Grid Background="AntiqueWhite">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="15"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="10"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="30"/>
-                        <ColumnDefinition Width="30"/>
-                    </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black">
-                        <Label Name="WindowName" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Content="Window" FontSize="7" VerticalContentAlignment="Stretch" Margin="-1,-4,0,-4"/>
-                    </Border>
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="UserControl">
+                        <Popup Name="PopWin">
+                                <Grid Name="ColorGrid" Background="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="15"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="10"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="30"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black">
+                                            <Label Name="WindowName" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Content="Window" FontSize="13" VerticalContentAlignment="Stretch" Margin="-1,-8,0,-8"/>
+                                        </Border>
 
-                    <Button Grid.Column="1" Name="Resize" Content="____" FontStyle="Normal" FontSize="10" Background="Transparent" FontWeight="UltraBold" VerticalContentAlignment="Bottom" FontFamily="Boulder"/>
-                    <Button Grid.Column="2" Name="Close" Content="X" FontStyle="Normal" FontSize="8" Background="Transparent" FontWeight="Bold" VerticalContentAlignment="Bottom"/>
-                </Grid>
-            </Grid>
-        </Popup>
-    </Grid>
+                                        <Button Grid.Column="1" Name="Resize" Content="____" FontStyle="Normal" FontSize="10" Background="Transparent" FontWeight="UltraBold" VerticalContentAlignment="Bottom" FontFamily="Boulder"/>
+                                        <Button Grid.Column="2" Name="Close" Content="X" FontStyle="Normal" FontSize="8" Background="Transparent" FontWeight="Bold" VerticalContentAlignment="Bottom"/>
+                                    </Grid>
+                                    <ContentControl Name="PopContent" Grid.Row="1" Content="{TemplateBinding Content}"/>
+                                    <Grid Grid.Row="2" >
+                                    <Label Name="ExtraText" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Content="Window" FontSize="10" VerticalContentAlignment="Stretch" Margin="-1,-7,0,-7"/>
+                                </Grid>
+                                </Grid>
+                            </Popup>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Style>
 </UserControl>

@@ -7,8 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPane">
-
     <StackPanel Orientation="Vertical" Grid.Column="1">
+        <UserControl ></UserControl>
         <StackPanel>
             <Label Content="Tile Tool" HorizontalAlignment="Stretch" FontSize="40" FontFamily="Comic Sans MS" HorizontalContentAlignment="Center"/>
         </StackPanel>
@@ -20,32 +20,11 @@
             <StackPanel Orientation="Vertical" Margin="50,0, 0, 0" Background="BlanchedAlmond">
                 <Image x:Name="FGImg" Width="200" Height="200" SnapsToDevicePixels="True"/>
                 <Button Name="AddFG" Content="Add" HorizontalAlignment="Center" Width="50"/>
-                <Button Content="Popup" Name="BB" />
-                <Popup Margin="100,100,0,13" Name="Pop" HorizontalAlignment="Left"   
-                       VerticalAlignment="Top" Width="400" Height="200" IsOpen="True">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="15"/>
-                            <RowDefinition Height="1*"/>
-                            <RowDefinition Height="10"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="30"/>
-                                <ColumnDefinition Width="30"/>
-                            </Grid.ColumnDefinitions>
-                            <Popup></Popup>
-                            <Border Grid.Column="0" BorderThickness="1" CornerRadius="0" BorderBrush="Black">
-                                <Label Name="WindowName" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Content="Window" FontSize="7" VerticalContentAlignment="Stretch" Margin="-1,-4,0,-4"/>
-                            </Border>
-
-                            <Button Grid.Column="1" Name="Resize" Content="____" FontStyle="Normal" FontSize="10" Background="Transparent" FontWeight="UltraBold" VerticalContentAlignment="Bottom" FontFamily="Boulder"/>
-                            <Button Grid.Column="2" Name="Close" Content="X" FontStyle="Normal" FontSize="8" Background="Transparent" FontWeight="Bold" VerticalContentAlignment="Bottom"/>
-                        </Grid>
-                    </Grid>
-                </Popup>
-</StackPanel>
+            </StackPanel>
         </StackPanel>
+        <local:PopWindow x:Name="PopWin" Title="bnxdbxb Window" ExtraText="Hello World">
+            <Grid Width="700" Height="700" Background="Black"/>
+        </local:PopWindow>
     </StackPanel>
+
 </Page>

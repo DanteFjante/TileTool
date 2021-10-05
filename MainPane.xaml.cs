@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -26,7 +22,7 @@ namespace TileMaker
             
             AddBG.Click += new RoutedEventHandler((sender, args) => AddImg(BGImg, bg, false));
             AddFG.Click += new RoutedEventHandler((sender, args) => AddImg(FGImg, fg, true));
-            Pop.IsOpen = false;
+
         }
 
         
