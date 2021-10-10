@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TileMaker"
+      
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPane">
@@ -21,10 +22,8 @@
                 <Image x:Name="FGImg" Width="200" Height="200" SnapsToDevicePixels="True"/>
                 <Button Name="AddFG" Content="Add" HorizontalAlignment="Center" Width="50"/>
             </StackPanel>
+            
         </StackPanel>
-        <local:PopWindow x:Name="PopWin" Title="bnxdbxb Window" ExtraText="Hello World">
-            <Grid Width="700" Height="700" Background="Black"/>
-        </local:PopWindow>
     </StackPanel>
 
 </Page>

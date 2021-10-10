@@ -4,19 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TileMaker"
+        xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="AntiqueWhite">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" Name="SideBar"/>
-            <ColumnDefinition Width="1*" Name="MainBar"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Grid Column="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="15"/>
-            </Grid.ColumnDefinitions>
-            <Button Name="SideBtn" Content="&gt;" HorizontalAlignment="Stretch" Grid.Column="1">
+        <StackPanel Grid.Column="0" Orientation="Horizontal">
+            <ContentControl Name="SideBar" Width="20">
+                <wpfTool:ColorPicker/>
+            </ContentControl>
+            <Button Name="SideBtn" Content="&gt;" Width="10" VerticalAlignment="Stretch">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="Button.Click">
                         <BeginStoryboard>
@@ -26,13 +26,14 @@
                     </EventTrigger>
                 </Button.Triggers>
             </Button>
-
-        </Grid>
+        </StackPanel>
         <Frame Grid.Column="1">
             <Frame.Content>
                 <local:MainPane/>
             </Frame.Content>
         </Frame>
+        <local:PopWindow>
+        </local:PopWindow>
     </Grid>
 
 </Window>
